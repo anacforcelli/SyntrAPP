@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import OverlayTrigger from "../../components/OverlayTrigger";
 import SidebarComponent from '../../components/Sidebar';
 
 
@@ -15,6 +15,7 @@ function Home(){
         </div>
       }>
         <h1>homepage</h1>
+        <OverlayTrigger buttonTitle='modal'><h1>modalcontent</h1></OverlayTrigger>
       </SidebarComponent>
     </div>
   );

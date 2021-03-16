@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import OverlayTrigger from "../../components/OverlayTrigger";
 import SidebarComponent from '../../components/Sidebar';
 
-function Atividades(){
+function Prevision(){
   return (
     <div className="home">
       <SidebarComponent>
-        <h1>atividades</h1>
+        <h1>previsoes</h1>
       </SidebarComponent>
     </div>
   );
 }
-export default Atividades; 
+
+export default Prevision; 

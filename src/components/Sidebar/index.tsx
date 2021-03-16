@@ -1,8 +1,10 @@
 import React from "react";
 import Sidebar from 'react-sidebar';
+import { Link } from "react-router-dom";
+import "./styles.css"
 
 type State = { sidebarDocked:boolean, sidebarOpen:boolean };
-type Props = { sidebarContent : any }
+type Props = {}
 
 class SidebarComponent extends React.Component<Props, State> {
     constructor(props : Props) {
@@ -21,7 +23,11 @@ class SidebarComponent extends React.Component<Props, State> {
     render() {
         return (
             <Sidebar
-            sidebar={this.props.sidebarContent}
+            sidebar={
+                <div id='sidebar-links'>
+                <Link to="/calendar">calendario</Link>
+                <Link to="/">home</Link>
+                </div>}
             open={this.state.sidebarOpen}
             docked={this.state.sidebarDocked}
             onSetOpen={this.onSetSidebarOpen}

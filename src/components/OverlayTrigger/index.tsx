@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Modal from 'react-modal';
 import "./styles.css";
 
-Modal.setAppElement('#page-content');
+Modal.setAppElement('#root');
 
 type Props = { title? : string, buttonBox? : any, buttonTitle : string };
 type State = { showModal : boolean };

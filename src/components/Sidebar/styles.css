@@ -1,0 +1,8 @@
+#sidebar-links {
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar-container {
+    width: 10vw;
+}

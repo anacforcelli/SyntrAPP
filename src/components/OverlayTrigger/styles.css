@@ -1,0 +1,24 @@
+.modal-title {
+    grid-area: title;
+}
+
+.close-button {
+    grid-area: close;
+}
+
+.modal-children {
+    grid-area: child;
+}
+
+.button-div {
+    grid-area: butto;
+}
+
+.ReactModal__Content {
+    
+    display: grid;
+    grid: 
+    'title title title title close'
+    'child child child child child'
+    'butto butto butto butto butto';
+}

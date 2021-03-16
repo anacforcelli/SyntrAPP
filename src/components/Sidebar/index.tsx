@@ -24,7 +24,9 @@ class SidebarComponent extends React.Component<Props, State> {
             sidebar={this.props.sidebarContent}
             open={this.state.sidebarOpen}
             docked={this.state.sidebarDocked}
-            onSetOpen={this.onSetSidebarOpen}>
+            onSetOpen={this.onSetSidebarOpen}
+            contentId='content-container'
+            sidebarId='sidebar-container'>
                 {this.props.children}
             </Sidebar>
         )

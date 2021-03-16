@@ -15,7 +15,9 @@ function Home(){
         </div>
       }>
         <h1>homepage</h1>
-        <OverlayTrigger buttonTitle='modal'><h1>modalcontent</h1></OverlayTrigger>
+        <OverlayTrigger buttonTitle='modal' title='modal title'>
+          <h1>modalcontent</h1>
+        </OverlayTrigger>
       </SidebarComponent>
     </div>
   );

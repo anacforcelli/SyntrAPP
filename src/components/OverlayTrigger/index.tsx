@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Modal from 'react-modal';
+import "./styles.css";
 
-Modal.setAppElement('#root');
+Modal.setAppElement('#page-content');
 
 type Props = { title? : string, buttonBox? : any, buttonTitle : string };
 type State = { showModal : boolean };
@@ -32,10 +33,12 @@ class OverlayTrigger extends Component < Props, State > {
         <button onClick={this.handleOpenModal}>{this.props.buttonTitle}</button>
         <Modal 
             isOpen={this.state.showModal}
-            contentLabel="Minimal Modal Example"
+            contentLabel="modal-content"
         >
-          <button onClick={this.handleCloseModal}>X</button>
-          {this.props.children}
+          <div className="modal-title">{this.props.title}</div>
+          <button className="close-button" onClick={this.handleCloseModal}>X</button>
+          <div className="modal-children">{this.props.children}</div>
+          <div className="button-div">{this.props.buttonBox}</div>
         </Modal>
       </div>
     );

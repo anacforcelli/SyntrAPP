@@ -3,12 +3,14 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import Atividades from './pages/Atividades';
 import Calendario from './pages/Calendario';
 import Home from './pages/Home';
+import Profile from './pages/Profile';
 import Prevision from './pages/Prevision';
 
 
 function Routes() {
     return(
         <BrowserRouter>
+            <Route path='/profile' component={Profile}/>
             <Route path='/' exact component={Home}/>
             <Route path='/activities' component={Atividades}/>
             <Route path='/calendar' component={Calendario}/>

@@ -5,7 +5,7 @@ import SidebarComponent from '../../components/Sidebar';
 
 function Atividades(){
   return (
-    <div className="home">
+    <div className="activity">
       <SidebarComponent>
         <h1>atividades</h1>
       </SidebarComponent>

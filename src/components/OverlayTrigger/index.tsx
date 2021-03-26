@@ -4,7 +4,7 @@ import "./styles.css";
 
 Modal.setAppElement('#root');
 
-type Props = { title? : string, buttonBox? : any, buttonTitle : string };
+interface Props { title? : string, buttonBox? : any, buttonTitle : string };
 type State = { showModal : boolean };
 
 

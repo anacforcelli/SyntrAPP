@@ -29,6 +29,7 @@ class SidebarComponent extends React.Component<Props, State> {
                 <Link to="/">home</Link>
                 <Link to="/activities">atividades</Link>
                 <Link to="/prevision">previsoes</Link>
+                <Link to="/profile">perfil</Link>
                 </div>}
             open={this.state.sidebarOpen}
             docked={this.state.sidebarDocked}

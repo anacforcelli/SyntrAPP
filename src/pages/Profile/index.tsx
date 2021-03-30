@@ -4,7 +4,7 @@ import axios from 'axios';
 interface Props {}
 
 interface State {
-    ServerResponse : any,
+    ServerResponse : Array<Object>,
 }
 
 class Profile extends Component <Props, State>{
@@ -12,13 +12,13 @@ class Profile extends Component <Props, State>{
 		super(props)
 
 		this.state = {
-            ServerResponse : '',
+            ServerResponse : [],
 		}
 	}
     componentDidMount() {
         axios.get('https://604a73889251e100177ceb12.mockapi.io/syntrapp/API/Users')
         .then(response => {
-            console.log(response) //REMOVE ON PRODUCTION!
+            console.log(response)
             this.setState({ ServerResponse: response.data })
         })
         .catch(error => {
@@ -27,13 +27,13 @@ class Profile extends Component <Props, State>{
     }
 
     render() {
+        var UserList : string = '';
+
+        for (var User of this.state.ServerResponse) {
+            UserList += (JSON.stringify(User))        
+        }
         return (
-            <div>
-            List of posts
-            {
-                this.state.ServerResponse
-            }
-            </div>
+            <div id='profiles-list' dangerouslySetInnerHTML = {{__html : UserList}}/>                
         );
     }
 }

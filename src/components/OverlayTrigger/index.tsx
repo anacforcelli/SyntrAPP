@@ -4,12 +4,12 @@ import "./styles.css";
 
 Modal.setAppElement('#root');
 
-interface Props { title? : string, buttonBox? : any, buttonTitle : string };
-type State = { showModal : boolean };
+export interface OverlayProps { title? : string, buttonBox? : any, buttonTitle : string };
+export interface OverlayState { showModal : boolean };
 
 
-class OverlayTrigger extends Component < Props, State > {
-  constructor(props : Props){
+class OverlayTrigger extends Component < OverlayProps, OverlayState > {
+  constructor(props : OverlayProps){
     super(props);
     this.state = {
         showModal: false

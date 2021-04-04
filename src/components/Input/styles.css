@@ -1,0 +1,28 @@
+.input-block{
+    position:relative;
+    display:flex;
+    flex-flow:column;
+}
+
+.input-block + .input-block{
+    margin-top:1rem; 
+}
+
+.input-block label{
+    font-size:1.4rem;
+}
+
+.input-block input{
+    width:70%;
+    height:5.6rem;
+    margin-top:0.8rem;
+    border-radius:0.2rem;
+    padding:0 1.6rem;
+    font:1.6rem Archivo;
+}
+
+@media (min-width:700px){
+    .input-block + .input-block{
+        margin-top:0rem;
+    }
+}

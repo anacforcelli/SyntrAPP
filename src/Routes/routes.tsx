@@ -8,7 +8,7 @@ interface RouteProps extends ReactRouteProps{
     component: React.ComponentType;
 }
 
-const RouteOverload: React.FC<RouteProps> = ({isPrivate = false, component: Component, ...rest}) => {
+const Routes: React.FC<RouteProps> = ({isPrivate = false, component: Component, ...rest}) => {
         const user = useAuth();
 
         return(
@@ -16,15 +16,15 @@ const RouteOverload: React.FC<RouteProps> = ({isPrivate = false, component: Comp
                 render={({location}) => {
                     console.log(user);
                     return(
-                    isPrivate === !!user ? (
-                        <Component/>
-                    ):(
-                        <Redirect to={{pathname:isPrivate ? '/' : '/principal',
-                        state: {from : location} }}/>
+                        isPrivate === !!user ? (
+                            <Component/>
+                        ):(
+                            <Redirect to={{pathname:isPrivate ? '/' : '/',
+                            state: {from : location} }}/>
                     )
                 )}}
             />
         );
 }
 
-export default RouteOverload;
+export default Routes;

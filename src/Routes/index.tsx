@@ -1,6 +1,5 @@
 import React from 'react';
-import {Switch} from 'react-router-dom';
-import RouteOverload from "./routes";
+import { Route, Switch } from 'react-router-dom';
 
 import Login         from '.././pages/Login';
 import SignUp_Passo1 from '.././pages/SignUp_Passo1';
@@ -14,21 +13,21 @@ import Prevision     from '.././pages/Prevision';
 
 import Redirection   from './redirect';
 
-function Routes(){
+function MainRoutes(){
     return(
             <Switch>                
-                <RouteOverload path='/'      exact component={Home}/>
-                <RouteOverload path='/login' exact component={Login} />
-                <RouteOverload path='/signup1'     component={SignUp_Passo1} />
-                <RouteOverload path='/signup2'     component={SignUp_Passo2} />
+                <Route path='/'      exact component={Home}/>
+                <Route path='/login' exact component={Login} />
+                <Route path='/signup1'     component={SignUp_Passo1} />
+                <Route path='/signup2'     component={SignUp_Passo2} />
 
-                <RouteOverload path='/feed'       component={Profile}    isPrivate/>
-                <RouteOverload path='/activities' component={Atividades} isPrivate/>
-                <RouteOverload path='/calendar'   component={Calendario} isPrivate/>
-                <RouteOverload path='/prevision'  component={Prevision}  isPrivate/>
+                <Route path='/feed'       component={Profile}    isPrivate/>
+                <Route path='/activities' component={Atividades} isPrivate/>
+                <Route path='/calendar'   component={Calendario} isPrivate/>
+                <Route path='/prevision'  component={Prevision}  isPrivate/>
                 
-                <RouteOverload component={Redirection} />
+                <Route component={Redirection} />
             </Switch>
     );
 }
-export default Routes;
+export default MainRoutes;

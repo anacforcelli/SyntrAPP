@@ -9,19 +9,6 @@ export interface user{
     last_name:string;
     foto:string;
     email:string;
-    sobre:string;
-    seguidores:Array<{
-        value:string;
-    }>;
-    seguindo:Array<{
-        value:string;
-    }>;
-    pius:Array<{
-        value:string;
-    }>;
-    favoritos:Array<{
-        value:string;
-    }>;
 }
 
 interface AuthState{
@@ -69,7 +56,7 @@ export const AuthProvider: React.FC = ({ children }) => {
             localStorage.setItem('@Project:token', token);
 
             if(!!token){
-                const userResponse = await api.get('usuarios/?search='+ username);
+                const userResponse = await api.get('users/?search='+ username);
                 const user = userResponse.data[0];
 
                 localStorage.setItem('@Project:user', JSON.stringify(user));
@@ -79,10 +66,10 @@ export const AuthProvider: React.FC = ({ children }) => {
             }
         }
 
-        catch(erro){
-            const userData = erro.response.data;
+        catch(error){
+            const userData = error.response.data;
 
-            if (erro.response){
+            if (error.response){
                 if(userData.global !== undefined && userData.global[0]
                 === "Impossível fazer login com as credenciais fornecidas."){
                     alert("Atenção usuário e senha não existem")

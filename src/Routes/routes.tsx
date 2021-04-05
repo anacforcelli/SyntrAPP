@@ -3,28 +3,29 @@ import useAuth from './auth'
 
 import { Route as ReactRouter, Redirect, RouteProps as ReactRouteProps } from 'react-router-dom';
 
-interface RouteProps extends ReactRouteProps{
-    isPrivate?:boolean;
-    component: React.ComponentType;
+interface RouteProps extends ReactRouteProps {
+    isPrivate? : boolean;
+    component  : React.ComponentType;
 }
 
-const Routes: React.FC<RouteProps> = ({isPrivate = false, component: Component, ...rest}) => {
-        const user = useAuth();
+const PrivateRoute : React.FC<RouteProps> = ({isPrivate = false, component: Component, ...rest}) => {
+    const user = useAuth();
+    var isAuthed : boolean = true
 
-        return(
-            <ReactRouter {...rest}
-                render={({location}) => {
-                    console.log(user);
-                    return(
-                        isPrivate === !!user ? (
-                            <Component/>
-                        ):(
-                            <Redirect to={{pathname:isPrivate ? '/' : '/',
-                            state: {from : location} }}/>
-                    )
-                )}}
-            />
-        );
+    return(
+        <ReactRouter {...rest}
+            render={({location}) => {
+                console.log(user);
+                return(
+                    isPrivate === isAuthed ? 
+                        ( <Component/>)
+                        :
+                        (<Redirect to={{pathname:isPrivate ? '/' : '/',
+                        state: {from : location} }}/>)
+                )
+            }
+        }/>
+    );
 }
 
-export default Routes;
+export default PrivateRoute;

@@ -12,8 +12,9 @@ import Home          from '.././pages/Home';
 import Prevision     from '.././pages/Prevision';
 
 import Redirection   from './redirect';
+import PrivateRoute from './routes'
 
-function MainRoutes(){
+function MainRoutes2s(){
     return(
             <Switch>                
                 <Route path='/'      exact component={Home}/>
@@ -21,13 +22,13 @@ function MainRoutes(){
                 <Route path='/signup1'     component={SignUp_Passo1} />
                 <Route path='/signup2'     component={SignUp_Passo2} />
 
-                <Route path='/feed'       component={Profile}    isPrivate/>
-                <Route path='/activities' component={Atividades} isPrivate/>
-                <Route path='/calendar'   component={Calendario} isPrivate/>
-                <Route path='/prevision'  component={Prevision}  isPrivate/>
+                <PrivateRoute path='/feed'       component={Profile}    isPrivate/>
+                <PrivateRoute path='/activities' component={Atividades} isPrivate/>
+                <PrivateRoute path='/calendar'   component={Calendario} isPrivate/>
+                <PrivateRoute path='/prevision'  component={Prevision}  isPrivate/>
                 
                 <Route component={Redirection} />
             </Switch>
     );
 }
-export default MainRoutes;
+export default MainRoutes2s;

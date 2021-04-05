@@ -1,4 +1,4 @@
-import React, {FormEvent, useState} from 'react';
+import React, { FormEvent, useState } from 'react';
 import { Body } from './styles';
 import { useHistory } from  'react-router-dom';
 

@@ -17,12 +17,12 @@ import PrivateRoute from './routes'
 function MainRoutes2s(){
     return(
             <Switch>                
-                <Route path='/'      exact component={Home}/>
+                <Route path='/'      exact component={Home} />
                 <Route path='/login' exact component={Login} />
                 <Route path='/signup1'     component={SignUp_Passo1} />
                 <Route path='/signup2'     component={SignUp_Passo2} />
 
-                <PrivateRoute path='/feed'       component={Profile}    isPrivate/>
+                <PrivateRoute path='/profile'    component={Profile}    isPrivate/>
                 <PrivateRoute path='/activities' component={Atividades} isPrivate/>
                 <PrivateRoute path='/calendar'   component={Calendario} isPrivate/>
                 <PrivateRoute path='/prevision'  component={Prevision}  isPrivate/>

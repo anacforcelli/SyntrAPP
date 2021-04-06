@@ -24,10 +24,10 @@ function Login(){
     history.push('/signup1');
   }
 
-    return (
+  return (
     <div id="page-landing">
         <InputLogin>
-            <h1>Entrar no PiuPiuwer</h1>
+            <h1>Entrar no syntrWeb</h1>
             <form onSubmit={handleLogin}>
                 <Input name="name"
                     label="Celular, e-mail ou nome de usuário"
@@ -40,13 +40,12 @@ function Login(){
                     value={password}
                     onChange={(e) => {setPassword(e.target.value)}}
                 />
-                <button type="submit">Entrar</button>
+                <button type="submit">Login</button>
             </form>
-            <button type="button" onClick={inscrever}><h6>Esqueceu sua senha?  Inscrever-se no PiuPiutter</h6></button>
+            <button type="button" onClick={inscrever}><h6>Inscreva-se</h6></button>
         </InputLogin>
     </div>
-
-        )
+  )
 }
 
 export default Login;

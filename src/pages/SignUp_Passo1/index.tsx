@@ -6,10 +6,10 @@ import Input from '../.././components/Input';
 
 function SignUp(){
 
-    const [name,setName] = useState('');
-    const [day,setDay] = useState('');
+    const [name,setName]   = useState('');
+    const [day,setDay]     = useState('');
     const [month,setMonth] = useState('');
-    const [year,setYear] = useState('');
+    const [year,setYear]   = useState('');
 
     function submit(e: FormEvent){
         e.preventDefault();
@@ -50,19 +50,27 @@ function SignUp(){
                         label="Dia"
                         value={day}
                         type="number"
+
                         onChange={(e) => {setDay(e.target.value)}}/>
+
+
                         <Input
                         name="month"
                         label="Mês"
                         value={month}
                         type="number"
+
                         onChange={(e) => {setMonth(e.target.value)}}/>
+
+
                         <Input
                         name="year"
                         label="Ano"
                         value={year}
                         type="number"
+
                         onChange={(e) => {setYear(e.target.value)}}/>
+                        
                     </div>
                     
                     <div className="acesso">

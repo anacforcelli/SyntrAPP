@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const api = axios.create(
     {
-        baseURL:'http://piupiuwer.polijr.com.br/',
+        baseURL:'https://604a73889251e100177ceb12.mockapi.io/syntrapp/API/',
     }
 )
 

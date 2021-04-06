@@ -14,7 +14,9 @@ class Landing extends React.Component<ILandingProps, ILandingState> {
     render() {
         return (
            <div id='main-buttons-container'>
-               
+               <Link to='/login'>
+                   <h1>Login!</h1>
+               </Link>
            </div>
         );
     }

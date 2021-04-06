@@ -14,7 +14,6 @@ class OverlayTrigger extends Component < OverlayProps, OverlayState > {
     this.state = {
         showModal: false
     };
-
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }

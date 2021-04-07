@@ -12,7 +12,7 @@ import Home          from '.././pages/Home';
 import Prevision     from '.././pages/Prevision';
 
 import Redirection   from './redirect';
-import PrivateRoute from './routes'
+import PrivateRoute  from './routes'
 
 function MainRoutes2s(){
     return(

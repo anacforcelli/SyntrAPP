@@ -4,7 +4,7 @@ import "./styles.css";
 
 Modal.setAppElement('#root');
 
-export interface OverlayProps { title? : string, buttonBox? : any, buttonTitle : string };
+export interface OverlayProps { title? : string, buttonBox? : any, triggerComponent : any};
 export interface OverlayState { showModal : boolean };
 
 
@@ -29,7 +29,7 @@ class OverlayTrigger extends Component < OverlayProps, OverlayState > {
   render () {
     return (
       <div>
-        <button onClick={this.handleOpenModal}>{this.props.buttonTitle}</button>
+        {this.props.triggerComponent}
         <Modal 
             isOpen={this.state.showModal}
             contentLabel="modal-content"

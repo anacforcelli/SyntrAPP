@@ -12,11 +12,10 @@ export interface Activity {
   //finish : Date
 }
 
-export interface IActivitiesProps {
-};
+export interface IActivitiesProps {};
 
 
-//force update official gambiarra
+//force update official gambiarra https://stackoverflow.com/q/46240647
 function useForceUpdate(){
   const [value, setValue] = useState(0); // integer state
   return () => setValue(value => value + 1); // update the state to force render
@@ -50,8 +49,6 @@ const Activities: React.FC<IActivitiesProps> = (props) => {
   }
 
   var response : any = ''//api.get('/Activities')
-
-
   var activityList : Array<Activity> = response //.data
   var activityListHTML : any = ''
   
@@ -68,7 +65,7 @@ const Activities: React.FC<IActivitiesProps> = (props) => {
       <div id="activities-screen">
         <div id="activities-overview" dangerouslySetInnerHTML={{__html : activityListHTML}}/>
         <div id="activity-menu">
-          <OverlayTrigger buttonTitle='Nova Atividade'>
+          <OverlayTrigger triggerComponent={ <button>Nova Atividade</button> }>
             <form action="submit"> {/*handle each optional inputs later*/}
               <Input 
                 name='name'

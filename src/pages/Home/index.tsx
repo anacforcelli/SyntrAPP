@@ -8,7 +8,9 @@ function Home(){
     <div className="home">
       <SidebarComponent>
         <h1>homepageContent</h1>
-        <OverlayTrigger buttonTitle='modal' title='modal title'>
+        <OverlayTrigger 
+         triggerComponent={<button>modalbutton</button>}
+         title='modal title'>
           <h1>modalcontent</h1>
         </OverlayTrigger>
       </SidebarComponent>

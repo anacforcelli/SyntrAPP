@@ -3,8 +3,8 @@ import Sidebar from 'react-sidebar';
 import { Link } from "react-router-dom";
 import "./styles.css"
 
-type State = { sidebarDocked:boolean, sidebarOpen:boolean };
-type Props = {}
+interface State { sidebarDocked:boolean, sidebarOpen:boolean };
+interface Props {}
 
 class SidebarComponent extends React.Component<Props, State> {
     constructor(props : Props) {
@@ -25,11 +25,11 @@ class SidebarComponent extends React.Component<Props, State> {
             <Sidebar
             sidebar={
                 <div id='sidebar-links'>
-                <Link to="/calendar">calendario</Link>
-                <Link to="/">home</Link>
-                <Link to="/activities">atividades</Link>
-                <Link to="/prevision">previsoes</Link>
-                <Link to="/profile">perfil</Link>
+                    <Link to="/calendar">calendario</Link>
+                    <Link to="/">home</Link>
+                    <Link to="/activities">atividades</Link>
+                    <Link to="/prevision">previsoes</Link>
+                    <Link to="/profile">perfil</Link>
                 </div>}
             open={this.state.sidebarOpen}
             docked={this.state.sidebarDocked}

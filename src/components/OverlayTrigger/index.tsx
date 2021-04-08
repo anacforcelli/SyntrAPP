@@ -28,18 +28,20 @@ class OverlayTrigger extends Component < OverlayProps, OverlayState > {
 
   render () {
     return (
-      <div>
-        {this.props.triggerComponent}
+      <>
+        <div className="modal-trigger" onClick={this.handleOpenModal}>
+          {this.props.triggerComponent}
+        </div>
         <Modal 
             isOpen={this.state.showModal}
-            contentLabel="modal-content"
+            contentLabel="modal-content"            
         >
           <div className="modal-title">{this.props.title}</div>
           <button className="close-button" onClick={this.handleCloseModal}>X</button>
           <div className="modal-children">{this.props.children}</div>
           <div className="button-div">{this.props.buttonBox}</div>
         </Modal>
-      </div>
+      </>
     );
   }
 }

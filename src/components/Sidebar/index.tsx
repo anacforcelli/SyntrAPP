@@ -27,7 +27,7 @@ class SidebarComponent extends React.Component<Props, State> {
                 <div id='sidebar-links'>
                     <Link to="/calendar">calendario</Link>
                     <Link to="/">home</Link>
-                    <Link to="/activities">atividades</Link>
+                    <Link to="/tasks">atividades</Link>
                     <Link to="/prevision">previsoes</Link>
                     <Link to="/profile">perfil</Link>
                 </div>}

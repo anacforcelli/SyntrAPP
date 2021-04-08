@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react'
 import Card, { CardProps } from '../Card/Card'
-import { Activity } from "../../pages/Atividades";
+import { Task } from "../../pages/Tasks";
 
 interface CalendarCardProps extends CardProps {
-    activityList : Array<Activity>,    
+    taskList : Array<Task>,    
 }
 
 function CalendarCard(props : CalendarCardProps) {
     return (
         <Card title={props.title} className='calendar-card'>
-            {props.activityList.map((activity, i) => (
-                <div className='calendar-activity-item' id={i.toString()}>
-                    {activity.name}
+            {props.taskList.map((task, i) => (
+                <div className='calendar-task-item' id={i.toString()}>
+                    {task.name}
                 </div>))}
         </Card>
     )

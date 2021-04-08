@@ -1,18 +1,18 @@
-import React, { useState, FormEvent, Component } from 'react';
+import React, { useState, FormEvent } from 'react';
 import Input from "../../components/Input";
 import OverlayTrigger from "../../components/OverlayTrigger";
 import SidebarComponent from '../../components/Sidebar';
 import api from '../../Services/api'
 
-export interface Activity {
+export interface Task {
   name : string,
   description : string,
-  //subactivities : Array<Activity>,
+  //subactivities : Array<Task>,
   //start : Date,
   //finish : Date
 }
 
-export interface IActivitiesProps {};
+export interface TasksProps {};
 
 
 //force update official gambiarra https://stackoverflow.com/q/46240647
@@ -22,7 +22,7 @@ function useForceUpdate(){
 }
 
 
-const Activities: React.FC<IActivitiesProps> = (props) => {  
+const Tasks: React.FC<TasksProps> = (props) => {  
 
   const forceUpdate = useForceUpdate();
 
@@ -49,22 +49,22 @@ const Activities: React.FC<IActivitiesProps> = (props) => {
   }
 
   var response : any = ''//api.get('/Activities')
-  var activityList : Array<Activity> = response //.data
-  var activityListHTML : any = ''
+  var taskList : Array<Task> = response //.data
+  var taskListHTML : any = ''
   
   //const [selectedActiv,setSelection] = useState();
 
-  if (activityList){
-      for (let activity of activityList){
-        activityListHTML += <div className='activity-item'>(JSON.stringify(activity))</div>
+  if (taskList){
+      for (let task of taskList){
+        taskListHTML += <div className='task-item'>(JSON.stringify(task))</div>
     }
   }
 
   return (
     <SidebarComponent>
-      <div id="activities-screen">
-        <div id="activities-overview" dangerouslySetInnerHTML={{__html : activityListHTML}}/>
-        <div id="activity-menu">
+      <div id="tasks-screen">
+        <div id="tasks-overview" dangerouslySetInnerHTML={{__html : taskListHTML}}/>
+        <div id="task-menu">
           <OverlayTrigger triggerComponent={ <button>Nova Atividade</button> }>
             <form action="submit"> {/*handle each optional inputs later*/}
               <Input 
@@ -86,4 +86,4 @@ const Activities: React.FC<IActivitiesProps> = (props) => {
   );
 }
 
-export default Activities;
+export default Tasks;

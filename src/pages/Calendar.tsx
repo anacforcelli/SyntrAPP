@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react'
-import SidebarComponent from '../../components/Sidebar';
-import CalendarCard from  '../../components/CalendarCard/CalendarCard'
+import SidebarComponent from '../components/Sidebar'
+import CalendarCard from  '../components/CalendarCard'
 
 
 function Calendario() {

@@ -32,6 +32,7 @@ class Profile extends Component <Props, State>{
         for (var User of this.state.ServerResponse) {
             UserList += (JSON.stringify(User))        
         }
+        
         return (
             <div id='profiles-list' dangerouslySetInnerHTML = {{__html : UserList}}/>                
         );

@@ -1,5 +1,5 @@
 import React from "react";
-import OverlayTrigger , {OverlayState} from "../../components/OverlayTrigger";
+import OverlayTrigger , {OverlayState} from "../components/OverlayTrigger";
 
 interface ILoginSignupModalState extends OverlayState {
     lifecycle : 'login' | 'signup' | 'acc-recovery',

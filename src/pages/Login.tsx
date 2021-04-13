@@ -1,10 +1,10 @@
 import React, { useState, useCallback, FormEvent } from 'react';
 
-import Input from '../.././components/Input';
+import Input from '../components/Input';
 import { useHistory } from  'react-router-dom';
-import { InputLogin } from './styles';
+import { InputLogin } from './Loginstyles';
 
-import useAuth from '../../Routes/auth';
+import useAuth from '../Routes/auth';
 
 function Login(){
   const { signIn } = useAuth();

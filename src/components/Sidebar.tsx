@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from 'react-sidebar';
 import { Link } from "react-router-dom";
-import "./styles.css"
+import "./SidebarStyles.css"
 
 interface State { sidebarDocked:boolean, sidebarOpen:boolean };
 interface Props {}

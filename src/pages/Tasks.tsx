@@ -1,8 +1,8 @@
 import React, { useState, FormEvent } from 'react';
-import Input from "../../components/Input";
-import OverlayTrigger from "../../components/OverlayTrigger";
-import SidebarComponent from '../../components/Sidebar';
-import api from '../../Services/api'
+import Input from "../components/Input";
+import OverlayTrigger from "../components/OverlayTrigger";
+import SidebarComponent from '../components/Sidebar';
+import api from '../Services/api'
 
 export interface Task {
   name : string,
@@ -14,17 +14,9 @@ export interface Task {
 
 export interface TasksProps {};
 
-
-//force update official gambiarra https://stackoverflow.com/q/46240647
-function useForceUpdate(){
-  const [value, setValue] = useState(0); // integer state
-  return () => setValue(value => value + 1); // update the state to force render
-}
-
+//useEffect
 
 const Tasks: React.FC<TasksProps> = (props) => {  
-
-  const forceUpdate = useForceUpdate();
 
   const [name,setName]          = useState('');
   const [description, setDescr] = useState('');
@@ -32,7 +24,7 @@ const Tasks: React.FC<TasksProps> = (props) => {
   //const [start,setStart]   = useState('');
   //const [finish, setFinish] = useState
 
-  function submit(e: FormEvent){
+  function submit (e: FormEvent){
       e.preventDefault();
       console.log({name, description});
       api.post('/Activities', {
@@ -45,7 +37,6 @@ const Tasks: React.FC<TasksProps> = (props) => {
       .catch(function (error) {
         console.log(error);
       });
-      forceUpdate()
   }
 
   var response : any = ''//api.get('/Activities')
@@ -56,7 +47,7 @@ const Tasks: React.FC<TasksProps> = (props) => {
 
   if (taskList){
       for (let task of taskList){
-        taskListHTML += <div className='task-item'>(JSON.stringify(task))</div>
+        taskListHTML += <div className='task-item'>{JSON.stringify(task)}</div>
     }
   }
 

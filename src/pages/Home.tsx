@@ -1,6 +1,6 @@
 import React from 'react';
-import OverlayTrigger from "../../components/OverlayTrigger";
-import SidebarComponent from '../../components/Sidebar';
+import OverlayTrigger from "../components/OverlayTrigger";
+import SidebarComponent from '../components/Sidebar';
 
 
 function Home(){

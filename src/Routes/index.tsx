@@ -7,7 +7,7 @@ import SignUp_Passo2 from '.././pages/SignUp_Passo2';
 
 import Profile       from '.././pages/Profile';
 import Tasks         from '.././pages/Tasks';
-import Calendario    from '.././pages/Calendario';
+import Calendar      from '.././pages/Calendar';
 import Home          from '.././pages/Home';
 import Prevision     from '.././pages/Prevision';
 
@@ -24,7 +24,7 @@ function MainRoutes2s(){
 
                 <PrivateRoute path='/profile'    component={Profile}    isPrivate/>
                 <PrivateRoute path='/tasks'      component={Tasks}      isPrivate/>
-                <PrivateRoute path='/calendar'   component={Calendario} isPrivate/>
+                <PrivateRoute path='/calendar'   component={Calendar} isPrivate/>
                 <PrivateRoute path='/prevision'  component={Prevision}  isPrivate/>
                 
                 <Route component={Redirection} />

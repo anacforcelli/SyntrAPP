@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import Card, { CardProps } from '../Card/Card'
-import { Task } from "../../pages/Tasks";
+import Card, { CardProps } from './Card'
+import { Task } from "../pages/Tasks";
 
 interface CalendarCardProps extends CardProps {
     taskList : Array<Task>,    

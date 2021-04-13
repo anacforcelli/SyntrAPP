@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LoginSignupModal from '../../components/LoginSignupModal'
+import LoginSignupModal from '../components/LoginSignupModal'
 
 export type ILandingProps = {}
 

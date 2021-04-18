@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Card, { CardProps } from './Card'
 import { Task } from "../pages/Tasks";
 
@@ -12,7 +12,8 @@ function CalendarCard(props : CalendarCardProps) {
             {props.taskList.map((task, i) => (
                 <div className='calendar-task-item' id={i.toString()}>
                     {task.name}
-                </div>))}
+                </div>))
+            }
         </Card>
     )
 }

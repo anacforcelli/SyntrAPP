@@ -1,15 +1,16 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import Login         from '.././pages/Login';
-import SignUp_Passo1 from '.././pages/SignUp_Passo1';
-import SignUp_Passo2 from '.././pages/SignUp_Passo2';
+import Login         from '../pages/Login';
+import SignUp_Passo1 from '../pages/SignUp_Passo1';
+import SignUp_Passo2 from '../pages/SignUp_Passo2';
 
-import Profile       from '.././pages/Profile';
-import Tasks         from '.././pages/Tasks';
-import Calendar      from '.././pages/Calendar';
-import Home          from '.././pages/Home';
-import Prevision     from '.././pages/Prevision';
+import Profile        from '../pages/Profile';
+import Tasks          from '../pages/Tasks';
+import TaskManagement from '../pages/TaskManagement'
+import Calendar       from '../pages/Calendar';
+import Home           from '../pages/Home';
+import Prevision      from '../pages/Prevision';
 
 import Redirection   from './redirect';
 import PrivateRoute  from './routes'
@@ -24,7 +25,8 @@ function MainRoutes2s(){
 
                 <PrivateRoute path='/profile'    component={Profile}    isPrivate/>
                 <PrivateRoute path='/tasks'      component={Tasks}      isPrivate/>
-                <PrivateRoute path='/calendar'   component={Calendar} isPrivate/>
+                <PrivateRoute path='/newtask'    component={TaskManagement} isPrivate/>
+                <PrivateRoute path='/calendar'   component={Calendar}   isPrivate/>
                 <PrivateRoute path='/prevision'  component={Prevision}  isPrivate/>
                 
                 <Route component={Redirection} />

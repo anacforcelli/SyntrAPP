@@ -1,6 +1,7 @@
 import React, { useState, FormEvent } from 'react'
 
 import Input from '../components/Input'
+import Sidebar from '../components/Sidebar'
 
 import { Task } from '../pages/Tasks'
 
@@ -17,6 +18,7 @@ function TaskManagement() {
                 e.preventDefault();
                 var newTask : Task = {name : Name, description: Descr}
                 tasks.push(newTask)
+                console.log(tasks)
                 /*api.post('/Activities', {
                         name: name,
                         description: description,
@@ -30,21 +32,23 @@ function TaskManagement() {
         }
 
         return (
+        <Sidebar>
                 <div id='input-space'>
-                        <form onSubmit={submitTask}> {/*handle each optional inputs later*/}
-                                <Input 
-                                name='name'
-                                label='name'
-                                onChange={(e) => {setName(e.target.value) }}
-                                />
-                                <Input 
-                                name='description' 
-                                label='description' 
-                                onChange={(e) => {setDescr(e.target.value)}}
-                                />
-                                <button type='submit' title='Criar nova Atividade'>Criar nova Atividade</button>
-                        </form>
+                <form onSubmit={submitTask}> {/*handle each optional inputs later*/}
+                        <Input 
+                        name='name'
+                        label='name'
+                        onChange={(e) => {setName(e.target.value) }}
+                        />
+                        <Input 
+                        name='description' 
+                        label='description' 
+                        onChange={(e) => {setDescr(e.target.value)}}
+                        />
+                        <button type='submit' title='Criar nova Atividade'>Criar nova Atividade</button>
+                </form>
                 </div>
+        </Sidebar>
         )
 }
 

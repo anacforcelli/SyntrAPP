@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom'
 import SidebarComponent  from '../components/Sidebar';
 import Card              from '../components/Card';
 
+//style
+import './styles/tasks.css'
+
 //data
 //import api from '../Services/api'
 import { tasks } from '../FakeData/tasks'
@@ -26,19 +29,18 @@ function Tasks () {
   return (
     <SidebarComponent>
       <div id="tasks-screen">
-        <div id="tasks-overview"/>
-          {
-            tasks.map((thisTask, index)=>{
+        <div id="tasks-overview">
+          {tasks.map((thisTask) => {
               return(
-                <Card className='task-card' title={thisTask.name}>
+                <Card className = 'task-card' title={thisTask.name}>
                   <p>{thisTask.description}</p>
                 </Card>
-              );
+              )
             })
           }
-
+        </div>
         <div id="task-menu">
-          <Link to='/tasks/new'><button>Nova Tarefa</button></Link>
+          <Link to='/newtask'><button>Nova Tarefa</button></Link>
         </div>
       </div>
     </SidebarComponent>

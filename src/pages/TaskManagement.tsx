@@ -11,45 +11,45 @@ import {tasks} from '../FakeData/tasks'
 
 function TaskManagement() {
 
-        const [Name, setName] = useState<string>('');
-        const [Descr, setDescr] = useState<string>('');
+	const [Name, setName] = useState<string>('');
+	const [Descr, setDescr] = useState<string>('');
 
-        function submitTask (e: FormEvent){
-                e.preventDefault();
-                var newTask : Task = {name : Name, description: Descr}
-                tasks.push(newTask)
-                console.log(tasks)
-                /*api.post('/Activities', {
-                        name: name,
-                        description: description,
-                })
-                .then(function (response) {
-                        console.log(response);
-                })
-                .catch(function (error) {
-                        console.log(error);
-                });*/
-        }
+	function submitTask (e: FormEvent){
+		e.preventDefault();
+		var newTask : Task = {name : Name, description: Descr}
+		tasks.push(newTask)
+		console.log(tasks)
+		/*api.post('/Activities', {
+				name: name,
+				description: description,
+		})
+		.then(function (response) {
+				console.log(response);
+		})
+		.catch(function (error) {
+				console.log(error);
+		});*/
+	}
 
-        return (
-        <Sidebar>
-                <div id='input-space'>
-                <form onSubmit={submitTask}> {/*handle each optional inputs later*/}
-                        <Input 
-                        name='name'
-                        label='name'
-                        onChange={(e) => {setName(e.target.value) }}
-                        />
-                        <Input 
-                        name='description' 
-                        label='description' 
-                        onChange={(e) => {setDescr(e.target.value)}}
-                        />
-                        <button type='submit' title='Criar nova Atividade'>Criar nova Atividade</button>
-                </form>
-                </div>
-        </Sidebar>
-        )
+	return (
+	<Sidebar>
+		<div id='input-space'>
+		<form onSubmit={submitTask}> {/*handle each optional inputs later*/}
+			<Input
+			name='name'
+			label='name'
+			onChange={(e) => {setName(e.target.value) }}
+			/>
+			<Input
+			name='description'
+			label='description'
+			onChange={(e) => {setDescr(e.target.value)}}
+			/>
+			<button type='submit' title='Criar nova Atividade'>Criar nova Atividade</button>
+		</form>
+		</div>
+	</Sidebar>
+	)
 }
 
 export default TaskManagement;

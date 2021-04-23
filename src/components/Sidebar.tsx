@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from 'react-sidebar';
 import { Link } from "react-router-dom";
-import "./SidebarStyles.css"
+import "./styles/sidebar.css"
 
 interface State { sidebarDocked:boolean, sidebarOpen:boolean };
 interface Props {}
@@ -16,8 +16,8 @@ class SidebarComponent extends React.Component<Props, State> {
         this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
     }
   
-    onSetSidebarOpen(open : any) {
-      this.setState({ sidebarOpen: open });
+    onSetSidebarOpen() {
+      this.setState({ sidebarOpen: true });
     }
     
     render() {
@@ -25,11 +25,11 @@ class SidebarComponent extends React.Component<Props, State> {
             <Sidebar
             sidebar={
                 <div id='sidebar-links'>
-                    <Link to="/calendar">calendario</Link>
-                    <Link to="/">home</Link>
-                    <Link to="/tasks">atividades</Link>
-                    <Link to="/prevision">previsoes</Link>
-                    <Link to="/profile">perfil</Link>
+                    <Link to="/calendar"><i className="arrow right"/>calendario</Link>
+                    <Link to="/"><i className="arrow right"/>home</Link>
+                    <Link to="/tasks"><i className="arrow right"/>atividades</Link>
+                    <Link to="/prevision"><i className="arrow right"/>previsoes</Link>
+                    <Link to="/profile"><i className="arrow right"/>perfil</Link>
                 </div>}
             open={this.state.sidebarOpen}
             docked={this.state.sidebarDocked}

@@ -1,0 +1,30 @@
+#sidebar-links {
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar-links a {
+    color:white;
+    margin-top: 0.7em;
+    margin-left: 0.5em;
+    font-family: 'Ubuntu',sans-serif;
+}
+
+.arrow {
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-right: 0.25em
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+
+#sidebar-container {
+    width: 10vw;
+    background-color: #34313D
+}

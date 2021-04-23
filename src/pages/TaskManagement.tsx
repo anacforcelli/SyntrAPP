@@ -1,7 +1,7 @@
 import React, { useState, FormEvent } from 'react'
 
 import Input from '../components/Input'
-import Sidebar from '../components/Sidebar'
+import SidebarComponent from '../components/Sidebar'
 
 import { Task } from '../pages/Tasks'
 
@@ -32,7 +32,7 @@ function TaskManagement() {
 	}
 
 	return (
-	<Sidebar>
+	<SidebarComponent>
 		<div id='input-space'>
 		<form onSubmit={submitTask}> {/*handle each optional inputs later*/}
 			<Input
@@ -48,7 +48,7 @@ function TaskManagement() {
 			<button type='submit' title='Criar nova Atividade'>Criar nova Atividade</button>
 		</form>
 		</div>
-	</Sidebar>
+	</SidebarComponent>
 	)
 }
 

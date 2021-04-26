@@ -9,22 +9,12 @@ import Card              from '../components/Card';
 import './styles/tasks.css'
 
 //data
-//import api from '../Services/api'
-import { tasks } from '../FakeData/tasks'
+import api from '../Services/api'
+import { Task } from "../Types";
 
-
-export interface Task {
-  name : string,
-  description : string,
-  //subactivities : Array<Task>,
-  //start : Date,
-  //finish : Date
-}
 
 function Tasks () {  
-
-  //var response : any = ''//api.get('/Activities')
-  //var taskList : Array<Task> = response.data
+  /*var tasks : Array<Task> = response.data*/
 
   return (
     <SidebarComponent>

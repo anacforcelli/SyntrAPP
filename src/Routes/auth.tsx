@@ -2,23 +2,15 @@ import React, {useContext, useState, useCallback} from 'react';
 import { useHistory } from 'react-router-dom';
 import api from '.././Services/api';
 
-export interface user{
-    id:number;
-    username:string;
-    first_name:string;
-    last_name:string;
-    foto:string;
-    email:string;
-}
+import {User} from '../Types'
 
 interface AuthState{
-    token:string;
-    user:user;
+    token : string;
+    user  : User;
 }
 
 interface AuthContextData{
-    user:user;
-    
+    user    : User;    
     LogOut(): void;
     signIn({username, password}: LoginCredentials): Promise <string | undefined>;
 }

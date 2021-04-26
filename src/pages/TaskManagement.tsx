@@ -3,11 +3,9 @@ import React, { useState, FormEvent } from 'react'
 import Input from '../components/Input'
 import SidebarComponent from '../components/Sidebar'
 
-import { Task } from '../pages/Tasks'
-
 //data
 //import api from '../Services/api'
-import {tasks} from '../FakeData/tasks'
+import {Task} from '../Types'
 
 function TaskManagement() {
 
@@ -16,9 +14,6 @@ function TaskManagement() {
 
 	function submitTask (e: FormEvent){
 		e.preventDefault();
-		var newTask : Task = {name : Name, description: Descr}
-		tasks.push(newTask)
-		console.log(tasks)
 		/*api.post('/Activities', {
 				name: name,
 				description: description,

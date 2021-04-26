@@ -3,7 +3,7 @@ import axios from 'axios';
 const token = localStorage.getItem('@Project:token');
 const apiAuth = axios.create(
     {
-        baseURL:'http://piupiuwer.polijr.com.br/',
+        baseURL:'',
         headers:{
             Authorization: `JWT ${token}`
         }

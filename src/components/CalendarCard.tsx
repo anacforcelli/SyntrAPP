@@ -1,6 +1,6 @@
 import React from 'react'
 import Card, { CardProps } from './Card'
-import { Task } from "../pages/Tasks";
+import { Task } from "../Types";
 
 interface CalendarCardProps extends CardProps {
     taskList : Array<Task>,    

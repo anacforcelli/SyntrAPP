@@ -1,22 +1,22 @@
 import React from 'react';
-import OverlayTrigger from "../components/OverlayTrigger";
+
+//components
 import SidebarComponent from '../components/Sidebar';
 
+//data
+import {Task} from '../Types'
 
 function Home(){
-  return (
-    <div className="home">
-      <SidebarComponent>
-        <h1>homepageContent</h1>
-        <OverlayTrigger 
-         triggerComponent={<button>modalbutton</button>}
-         title='modal title'>
-          <h1>modalcontent</h1>
-        </OverlayTrigger>
-      </SidebarComponent>
-    </div>
-  );
+    return (
+        <div className="home">
+        <SidebarComponent>
+            <h1>Home</h1>
+            <div id="tasks-summary"></div>
+            <div id="daily-log-summary"></div>
+        </SidebarComponent>
+        </div>
+    );
 }
 
 
-export default Home; 
+export default Home;

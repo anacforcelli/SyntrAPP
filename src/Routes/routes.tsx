@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import useAuth from './auth'
 
 import { Route as ReactRouter, Redirect, RouteProps as ReactRouteProps } from 'react-router-dom';
@@ -15,7 +15,6 @@ const PrivateRoute : React.FC<RouteProps> = ({isPrivate = false, component: Comp
     return(
         <ReactRouter {...rest}
             render={({location}) => {
-                console.log(user);
                 return(
                     isPrivate === isAuthed ? 
                         ( <Component/>)

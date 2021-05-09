@@ -1,22 +1,14 @@
-import React, {Component} from "react";
-import axios from 'axios';
+import React, {useContext} from "react";
 
+import SidebarComponent from '../components/Sidebar';
+import { AuthContext } from "../Routes/auth";
 
-function Profile (props) {
-    //const [userList, setuserList] = useState<Array<User>>();
-	
-    axios.get('https://604a73889251e100177ceb12.mockapi.io/syntrapp/API/Users')
-    .then(response => {
-        console.log(response)
-        //setuserList(response.data)
-    })
-    .catch(error => {
-        console.log(error)
-    })
-
+function Profile () {
+    const {user} = useContext(AuthContext)
     return (
-        <div id='profiles-list'>
-        </div>                
+        <SidebarComponent>
+                {JSON.stringify(user)}
+        </SidebarComponent>          
     );    
 }
 

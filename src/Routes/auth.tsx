@@ -37,25 +37,28 @@ export const AuthProvider: React.FC = ({ children }) => {
     const history = useHistory();
 
     const signIn = useCallback(async ({username,password}:LoginCredentials) => {
-        try{
+        try{/*
             const response = await api.post('/login/', {
                 username,
                 password,
-            });
+            });*/
+            const userResponse = await api.get('Users/?search='+ username);
+            const user : User = userResponse.data[0];
 
-            const { token } = response.data;
-            console.log(token);
+            const token  = 'batata';
             localStorage.setItem('@Project:token', token);
+            localStorage.setItem('@Project:user', JSON.stringify(user));
+            setUserData({token, user})
+            history.push('/home')
 
-            if(!!token){
+            /*if(!!token){
                 const userResponse = await api.get('users/?search='+ username);
                 const user = userResponse.data[0];
 
                 localStorage.setItem('@Project:user', JSON.stringify(user));
                 console.log(token);
-                setUserData({token, user});
                 history.push('/feed');
-            }
+            }*/
         }
 
         catch(error){
@@ -84,8 +87,6 @@ export const AuthProvider: React.FC = ({ children }) => {
     },[history]);
 
     const LogOut = () => {
-            console.log(localStorage.getItem('@Project:token'));
-            console.log(localStorage.getItem('@Project:user'));
             localStorage.removeItem('@Project:token');
             localStorage.removeItem('@Project:user');
             history.push('/');
@@ -94,7 +95,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     };
 
     return(
-        <AuthContext.Provider value={{ user: userData.user, signIn, LogOut}}>
+        <AuthContext.Provider value={{ user: userData.user , signIn, LogOut}}>
             {children}
         </AuthContext.Provider>
     );

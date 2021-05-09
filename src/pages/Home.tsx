@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import { AuthContext } from "../Routes/auth";
 
 //components
 import SidebarComponent from '../components/Sidebar';
@@ -7,6 +8,8 @@ import SidebarComponent from '../components/Sidebar';
 import {Task} from '../Types'
 
 function Home(){
+    const {user} = useContext(AuthContext)
+    
     return (
         <div className="home">
         <SidebarComponent>

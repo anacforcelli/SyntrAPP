@@ -55,3 +55,7 @@ export interface Task {
     description : string,
 }
 
+export interface Worker extends User {
+    state : boolean,
+    UserId : number,
+}

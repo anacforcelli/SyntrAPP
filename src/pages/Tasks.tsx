@@ -20,14 +20,14 @@ function Tasks () {
     <SidebarComponent>
       <div id="tasks-screen">
         <div id="tasks-overview">
-          {tasks.map((thisTask) => {
+          {/*{{tasks.map((thisTask) => {
               return(
                 <Card className = 'task-card' title={thisTask.name}>
                   <p>{thisTask.description}</p>
                 </Card>
               )
             })
-          }
+          }*/}
         </div>
         <div id="task-menu">
           <Link to='/newtask'><button>Nova Tarefa</button></Link>

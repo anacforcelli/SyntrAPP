@@ -21,7 +21,7 @@ function Login(){
 
   const history = useHistory();
   function inscrever(){
-    history.push('/signup1');
+    history.push('/');
   }
 
   return (
@@ -42,7 +42,6 @@ function Login(){
                 />
                 <button type="submit">Login</button>
             </form>
-            <button type="button" onClick={inscrever}><h6>Inscreva-se</h6></button>
         </InputLogin>
     </div>
   )

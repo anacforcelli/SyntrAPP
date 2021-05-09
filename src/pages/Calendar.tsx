@@ -9,7 +9,7 @@ import CalendarCard from  '../components/CalendarCard'
 function Calendario() {
 
     const [filter, setFilter]   = useState('SAF')
-    const [cards, setCards] = useState<JSX.Element[]>()
+    const [cards, setCards] = useState<JSX.Element[]>()    
 
     useEffect(() => {
         switch (filter) {

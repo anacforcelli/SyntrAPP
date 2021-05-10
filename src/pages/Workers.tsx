@@ -17,14 +17,14 @@ export default function Workers() {
     const [workers, setWorkers] = useState<Array<Worker>>([])
     let name : string, 
         photo : string,
-        password : string,
+        password : string = '12345',
         email : string,
         cpf : number,
         phone : number
     
     function submitWorker (e : FormEvent){
         e.preventDefault()
-        api.post('Users/'+user.id+'Workers', {
+        api.post('Users/'+user.id+'/Workers', {
             name        : name, 
             photo       : photo,
             password    : password,
@@ -33,7 +33,7 @@ export default function Workers() {
             phone       : phone,
             state       : true,
             UserId      : user.id,
-            createdAt   : Date.now()
+            createdAt   : Date.now
         })
         .then(function (response) {
           console.log(response);

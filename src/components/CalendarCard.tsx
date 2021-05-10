@@ -10,7 +10,7 @@ function CalendarCard(props : CalendarCardProps) {
     return (
         <Card title={props.title} className='calendar-card'>
             {props.taskList.map((task, i) => (
-                <div className='calendar-task-item' id={i.toString()}>
+                <div className='calendar-task-item' id={'task-'+i.toString()}>
                     {task.name}
                 </div>))
             }

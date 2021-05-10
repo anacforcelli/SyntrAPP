@@ -1,14 +1,15 @@
-import React, { useState, FormEvent } from 'react'
+import React, { useState, FormEvent, useContext } from 'react'
 
 import Input from '../components/Input'
 import SidebarComponent from '../components/Sidebar'
 
 //data
-//import api from '../Services/api'
+import api from '../Services/api'
+import { AuthContext } from '../Routes/auth'
 import {Task} from '../Types'
 
 function TaskManagement() {
-
+	const {user} = useContext(AuthContext)
 	const [Name, setName] = useState<string>('');
 	const [Descr, setDescr] = useState<string>('');
 

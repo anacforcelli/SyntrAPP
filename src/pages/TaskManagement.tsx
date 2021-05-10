@@ -1,4 +1,4 @@
-import React, { useState, FormEvent, useContext } from 'react'
+import React, { FormEvent, useContext } from 'react'
 
 import Input from '../components/Input'
 import SidebarComponent from '../components/Sidebar'
@@ -6,25 +6,26 @@ import SidebarComponent from '../components/Sidebar'
 //data
 import api from '../Services/api'
 import { AuthContext } from '../Routes/auth'
-import {Task} from '../Types'
 
 function TaskManagement() {
-	const {user} = useContext(AuthContext)
-	const [Name, setName] = useState<string>('');
-	const [Descr, setDescr] = useState<string>('');
+	let newTaskName : string, 
+		newTaskDescription : string
 
-	function submitTask (e: FormEvent){
+	const {user} = useContext(AuthContext)
+
+	const submitTask = (e: FormEvent) => {
 		e.preventDefault();
-		/*api.post('/Activities', {
-				name: name,
-				description: description,
+		api.post('/Users/'+user.id+'/Farms/1/Space/1/SAF_spaces/1/Plants_allocated/1/Tasks', {
+				name: newTaskName,
+				description: newTaskDescription,
+				plantId : 1,
 		})
 		.then(function (response) {
 				console.log(response);
 		})
 		.catch(function (error) {
 				console.log(error);
-		});*/
+		});
 	}
 
 	return (
@@ -34,12 +35,13 @@ function TaskManagement() {
 			<Input
 			name='name'
 			label='name'
-			onChange={(e) => {setName(e.target.value) }}
+			onChange={(e) => { newTaskName=e.target.value }}
 			/>
-			<Input
+			<label htmlFor="description"/>
+			<textarea
+			id = 'description'
 			name='description'
-			label='description'
-			onChange={(e) => {setDescr(e.target.value)}}
+			onChange={(e) => { newTaskDescription = e.target.value }}
 			/>
 			<button type='submit' title='Criar nova Atividade'>Criar nova Atividade</button>
 		</form>

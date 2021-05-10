@@ -9,16 +9,14 @@ import api from  '../Services/api'
 import {AuthContext} from "../Routes/auth";
 import { Task } from '../Types';
 
-function Calendario() {
+function Calendar() {
 
     const [filter, setFilter]   = useState('SAF')
     const [cards, setCards] = useState<JSX.Element[]>()
-
     const { user } = useContext(AuthContext)
-
-    let tasks : Array<Task>
+    let tasks : Array<Task> = []
     useEffect(() => {
-        api.get('/Users/'+user.id+'/Farms/1/Space/1/SAF_spaces/1/Plants_allocated/1/Tasks').then(
+        api.get('/Users/'+user.id+'/Farms/1/Space/1/SAF_spaces/1/Plants_allocated/1/Tasks').then( //this will prbably stay like this until we work with the true api, unless we really want a thousand mfking nested calls
             (response)=>{
                 tasks = response.data;
                 console.log(tasks)
@@ -33,10 +31,10 @@ function Calendario() {
                 break;
             case 'Date':
                 console.log('date')
-                break;    
+                break;
             case 'Worker':
                 console.log('worker')
-                break;   
+                break;
             default:
                 break;
             }
@@ -47,16 +45,16 @@ function Calendario() {
         <SidebarComponent>
             <h1>Calendário</h1>
             <div className="filter-buttons">
-                <button id="set-filter-saf" onClick={()=>setFilter('SAF')}>Filtro SAF</button>
-                <button id="set-filter-date" onClick={()=>setFilter('Date')}>Filtro Data</button>
-                <button id="set-filter-worker" onClick={()=>setFilter('Worker')}>Filtro Pessoa</button>
+                <button id="set-filter-saf"    onClick={()=>setFilter('SAF')}>    Filtro SAF</button>
+                <button id="set-filter-date"   onClick={()=>setFilter('Date')}>   Filtro Data</button>
+                <button id="set-filter-worker" onClick={()=>setFilter('Worker')}> Filtro Pessoa</button>
             </div>
             <div className="cards-display">
-                {cards}  
+                {cards}
             </div>
         </SidebarComponent>
     );
 }
 
 
-export default Calendario; 
+export default Calendar;

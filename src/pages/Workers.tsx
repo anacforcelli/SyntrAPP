@@ -17,11 +17,12 @@ export default function Workers() {
     const [workers, setWorkers] = useState<Array<Worker>>([])
     let name : string, 
         photo : string,
-        password : string = '12345',
+        password : string = 'password',
         email : string,
         cpf : number,
         phone : number
     
+    //please add data format confirmation
     function submitWorker (e : FormEvent){
         e.preventDefault()
         api.post('Users/'+user.id+'/Workers', {
@@ -54,6 +55,7 @@ export default function Workers() {
 
     return (
         <SidebarComponent>
+            <h1>Gerenciar Funcionários</h1>
             <div id="workers-search"></div>
             <div id="view-workers">
                 {

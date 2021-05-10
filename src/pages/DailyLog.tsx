@@ -5,6 +5,7 @@ import SidebarComponent from '../components/Sidebar'
 import Card from '../components/Card'
 
 //data
+import api from '../Services/api'
 
 export default function DailyLog() {
     const [activeUser, setActiveUser] = useState<string>('');

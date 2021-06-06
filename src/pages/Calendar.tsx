@@ -2,27 +2,25 @@ import React, { useState, useEffect, useContext } from 'react'
 
 //components
 import SidebarComponent from '../components/Sidebar'
-import CalendarCard from  '../components/CalendarCard'
+import CalendarCard     from  '../components/CalendarCard'
 
 //data
-import api from  '../Services/api'
-import {AuthContext} from "../Routes/auth";
-import { Task } from '../Types';
+import api              from  '../Services/api'
+import { AuthContext }  from "../Routes/auth";
+import { Task }         from '../Types';
 
 function Calendar() {
 
-    const [filter, setFilter]   = useState('SAF')
-    const [cards, setCards] = useState<JSX.Element[]>()
+    const [ filter, setFilter ] = useState('SAF')
     const { user } = useContext(AuthContext)
+    
     let tasks : Array<Task> = []
-    useEffect(() => {
-        api.get('/Users/'+user.id+'/Farms/1/Space/1/SAF_spaces/1/Plants_allocated/1/Tasks').then( //this will prbably stay like this until we work with the true api, unless we really want a thousand mfking nested calls
-            (response)=>{
-                tasks = response.data;
-                console.log(tasks)
-            }
-        )
-    }, [])
+    api.get('/Users/'+user.id+'/Farms/1/Space/1/SAF_spaces/1/Plants_allocated/1/Tasks').then( //this will prbably stay like this until we work with the true api, unless we really want a thousand mfking nested calls
+        (response)=>{
+            tasks = response.data;
+            console.log(tasks)
+        }
+    )
 
     useEffect(() => {
         switch (filter) {
@@ -39,7 +37,7 @@ function Calendar() {
                 break;
             }
         return () => {}
-    }, [filter]);
+    }, []);
 
     return (
         <SidebarComponent>
@@ -50,7 +48,7 @@ function Calendar() {
                 <button id="set-filter-worker" onClick={()=>setFilter('Worker')}> Filtro Pessoa</button>
             </div>
             <div className="cards-display">
-                {cards}
+                {}
             </div>
         </SidebarComponent>
     );

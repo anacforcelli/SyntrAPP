@@ -4,9 +4,9 @@ import api from '../Services/api'
 
 //components
 import SidebarComponent from '../components/Sidebar'
-import OverlayTrigger from '../components/OverlayTrigger'
-import Card from '../components/Card'
-import Input from '../components/Input'
+import OverlayTrigger   from '../components/OverlayTrigger'
+import Card             from '../components/Card'
+import Input            from '../components/Input'
 
 //types
 import {Worker} from '../Types'

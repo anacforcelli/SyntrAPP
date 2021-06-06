@@ -28,7 +28,7 @@ export const CostViewer = (props : any) =>{
     return(
         <>
         <label>Escolha um filtro</label>
-        <select name="filters" id="filters" onChange={(e)=>{setCostFilter(e.target.value)}}>
+        <select name="filters" id="filters" onChange ={(e)=>{setCostFilter(e.target.value)}}>
             <option value="material">Materiais</option>
             <option value="machinery">Maquinário</option>
             <option value="workers">Mão-de-Obra</option>
@@ -65,9 +65,9 @@ function Stats(){
 			<SidebarComponent>
 				<h1>Estatísticas</h1>
 				<div id="filter-buttons">
-					<button onClick={()=>{setFilter('general')}}>Geral</button>
-					<button onClick={()=>{setFilter('costs')}}>Custos</button>
-					<button onClick={()=>{setFilter('worker')}}>Funcionários</button>
+					<button onClick={()=>{setFilter('general')}} > Geral       </button>
+					<button onClick={()=>{setFilter('costs')}}   > Custos      </button>
+					<button onClick={()=>{setFilter('worker')}}  > Funcionários</button>
 				</div>
                 <CostViewer filter={filter}></CostViewer>
 			</SidebarComponent>

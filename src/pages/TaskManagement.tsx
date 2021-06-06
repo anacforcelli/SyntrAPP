@@ -6,12 +6,22 @@ import SidebarComponent from '../components/Sidebar'
 //data
 import api from '../Services/api'
 import { AuthContext } from '../Routes/auth'
+import { Worker } from '../Types'
 
 function TaskManagement() {
+
+	const {user} = useContext(AuthContext)
+
 	let newTaskName : string, 
 		newTaskDescription : string
 
-	const {user} = useContext(AuthContext)
+	let workers : Array<Worker> = []
+
+	api.get('/Users/'+user.id+'/Workers/').then(
+		(response) => {
+			workers = response.data
+		}
+	)
 
 	const submitTask = (e: FormEvent) => {
 		e.preventDefault();

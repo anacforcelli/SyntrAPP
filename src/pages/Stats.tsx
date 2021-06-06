@@ -6,10 +6,15 @@ import SidebarComponent from '../components/Sidebar';
 //data
 import api from "../Services/api";
 
+interface costViewerProps {
+    filter : string,
+}
 
-export const CostViewer = (props : any) =>{
-	const [costfilter, setCostFilter]   = useState('material')
-    useEffect(()=>{
+export const CostViewer = ( costViewerProps ) =>{
+
+	const [costfilter, setCostFilter] = useState('material')
+
+    useEffect( () => {
         switch (costfilter) {
             case 'material':
                 console.log('material')
@@ -42,6 +47,7 @@ export const CostViewer = (props : any) =>{
 
 
 function Stats(){
+
 	const [filter, setFilter]   = useState('general')
 
 	useEffect(() => {

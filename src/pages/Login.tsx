@@ -3,7 +3,7 @@ import React, { useState, useCallback, FormEvent } from 'react';
 import Input from '../components/Input';
 import useAuth from '../Routes/auth';
 
-function Login(){
+function Login() {
   const { signIn } = useAuth();
 
   const [username,setUsername] = useState('');

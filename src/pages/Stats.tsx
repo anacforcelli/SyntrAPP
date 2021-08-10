@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState,} from 'react';
 
 //components
 import SidebarComponent from '../components/Sidebar';
@@ -6,15 +6,11 @@ import SidebarComponent from '../components/Sidebar';
 //data
 import api from "../Services/api";
 
-interface costViewerProps {
-    filter : string,
-}
-
-export const CostViewer = ( costViewerProps ) =>{
+export const CostViewer = ( costViewerProps : { filter : string } ) =>{
 
 	const [costfilter, setCostFilter] = useState('material')
 
-    useEffect( () => {
+    useEffect( () => { //adicionar dependencia do filtro do componente superior
         switch (costfilter) {
             case 'material':
                 console.log('material')
